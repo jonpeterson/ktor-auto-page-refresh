@@ -1,0 +1,20 @@
+[*]
+charset = utf-8
+indent_style = space
+insert_final_newline = true
+
+[{*.kt,*.kts}]
+indent_size = 4
+ktlint_code_style = intellij_idea
+ij_kotlin_code_style_defaults = KOTLIN_OFFICIAL
+# Prevent IntelliJ from suggesting wildcard imports
+ij_kotlin_name_count_to_use_star_import = 2147483647
+ij_kotlin_name_count_to_use_star_import_for_members = 2147483647
+ij_kotlin_packages_to_use_import_on_demand = unset
+
+[**/test/**/*.{kt,kts}]
+# Allow Kotest's suggested way of constructing test classes
+ktlint_standard_class-signature = disabled
+
+[*.toml]
+indent_size = 2
