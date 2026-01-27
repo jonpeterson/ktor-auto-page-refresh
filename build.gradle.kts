@@ -1,9 +1,8 @@
-import org.jreleaser.model.Active
-
 plugins {
-    alias(libs.plugins.jreleaser)
+    alias(libs.plugins.axion.release)
     alias(libs.plugins.kotlin.jvm)
     alias(libs.plugins.ktlint)
+    alias(libs.plugins.maven.publish)
 }
 
 tasks.wrapper {
@@ -12,7 +11,6 @@ tasks.wrapper {
 
 group = "io.github.jonpeterson"
 description = "A Ktor plugin for reloading the browser when the server reloads"
-version = "0.1.0"
 
 kotlin {
     jvmToolchain(25)
@@ -35,27 +33,24 @@ tasks.withType<Test>().configureEach {
     useJUnitPlatform()
 }
 
-jreleaser {
-    project {
-        license = "MIT"
-        links.homepage = "https://github.com/jonpeterson/ktor-auto-page-refresh"
-        authors.add("Jon Peterson")
-        maintainers.add("jonpeterson")
+mavenPublishing {
+    signAllPublications()
+    publishToMavenCentral()
+
+    pom {
+        url = "https://github.com/jonpeterson/ktor-auto-page-refresh"
         inceptionYear = "2026"
-    }
-    release.github {
-        repoOwner = "jonpeterson"
-        sign = true
-    }
-    signing.pgp {
-        active = Active.ALWAYS
-        armored = true
-    }
-    deploy.maven.mavenCentral {
-        register("main") {
-            active = Active.RELEASE
-            url = "https://central.sonatype.com/api/v1/publisher"
-            stagingRepository("target/staging-deploy")
+        licenses {
+            license {
+                name = "MIT"
+            }
+        }
+        developers {
+            developer {
+                id = "jonpeterson"
+                name = "Jon Peterson"
+                url = "https://github.com/jonpeterson/"
+            }
         }
     }
 }

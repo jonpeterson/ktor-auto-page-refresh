@@ -1,3 +1,5 @@
+New stuff
+
 ## Running The Example
 
 The goal of the example is to demonstrate how the plugin works in the simplest form.
