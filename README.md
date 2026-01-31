@@ -1,5 +1,5 @@
 # ktor-auto-page-refresh
-[![CI](https://github.com/jonpeterson/ktor-auto-page-refresh/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/oshai/kotlin-logging/actions/workflows/build.yml)
+[![CI](https://github.com/jonpeterson/ktor-auto-page-refresh/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/jonpeterson/ktor-auto-page-refresh/actions/workflows/build.yml)
 [![Maven Central](https://img.shields.io/maven-central/v/io.github.jonpeterson/ktor-auto-page-refresh.svg)](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22io.github.jonpeterson%22)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue)](https://github.com/jonpeterson/ktor-auto-page-refresh/blob/main/LICENSE)
 
